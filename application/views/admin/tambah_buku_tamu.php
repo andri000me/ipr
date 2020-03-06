@@ -72,6 +72,7 @@
                     <strong><p><?php echo $lihat->pertanyaan ?><br>
 
                     <div class="form-group">
+
                     <input type="checkbox" name="jawaban" value="YA">
                     <label for="vehicle2"><strong>YA</strong> </label><br>
                     <input type="checkbox" name="jawaban" value="TIDAK">
@@ -80,7 +81,6 @@
                                     
                       </tr>
                       <?php endforeach ?>
-
 
                     <!-- <?php  
                       $no = 1;
@@ -100,18 +100,6 @@
                     </tr>
                       <?php endforeach ?> -->
 
-                  
-
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">Jam Masuk</label>
-                      <input type="text" class="form-control" name="jam_masuk" placeholder="Jam Masuk"/>
-                  </div> -->
-
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">Jam Keluar</label>
-                      <input type="text" class="form-control" name="jam_keluar" placeholder="Jam Keluar"/>
-                  </div> -->
-
                   <a href="<?php echo base_url(); ?>admin/tamu_masuk" class="btn btn-danger btn-flat"><i class="fa fa-arrow-left"></i> Batal</a>
                   <button type="submit" name="simpan" class="btn btn-success btn-flat"><i class="fa fa-save"></i> Simpan</button>
                 <?php echo form_close(); ?>
@@ -120,7 +108,7 @@
             </div><!-- /.box -->
           </section><!-- /.content -->
         </div>
-
+        
        <!--  <script type="text/javascript" src="<?php echo base_url(); ?>assets/webcamjs/webcam.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script> -->
         <!-- Code to handle taking the snapshot and displaying it locally -->

@@ -87,15 +87,15 @@ class Admin extends CI_Controller {
 
 		#UNIQUE ID TABLE PARENT 1
 		$uniqueFirstTb = $this->db->insert_id();
-
 		$no_buku_tamu = $this->input->post('no_buku_tamu');
-		$id_pertanyaan = $this->db->get_where('tb_pertanyaan',array('id_pertanyaan'=>$id_pertanyaan))->row_array();
+		$id_pertanyaan = $this->input->post('id_pertanyaan');
+		/*$id_pertanyaan = $this->db->get_where('tb_pertanyaan',array('id_pertanyaan'=>$id_pertanyaan))->row_array();*/
 		$jawaban = $this->input->post('jawaban');
 		
 
 		$detail = array(
 			'no_buku_tamu' => $uniqueFirstTb,
-			'id_pertanyaan' => $id_pertanyaan['id_pertanyaan'],
+			'id_pertanyaan' => $id_pertanyaan,
 			'jawaban' => $jawaban,
 		);
 		$this->db->insert('tb_buku_tamu_detail', $detail);	
