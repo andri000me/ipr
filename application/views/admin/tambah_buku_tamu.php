@@ -59,6 +59,11 @@
                       <input type="text" class="form-control" name="nomor_kartu" placeholder="Nomor Kartu"/>
                   </div>
 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Suhu Tubuh</label>
+                      <input type="text" class="form-control" name="suhu_tubuh" placeholder="Suhu Tubuh"/>
+                  </div>
+
                     <?php  
                       $no = 1;
                       foreach ($data as $lihat):
@@ -93,13 +98,7 @@
                     </div>
 
                     </tr>
-                      <?php endforeach ?>
- -->
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Suhu Tubuh</label>
-                      <input type="text" class="form-control" name="suhu_tubuh" placeholder="Suhu Tubuh"/>
-                  </div>
+                      <?php endforeach ?> -->
 
                   
 

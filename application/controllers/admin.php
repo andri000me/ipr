@@ -71,6 +71,7 @@ class Admin extends CI_Controller {
 		$bertemu = $this->input->post('bertemu');
 		$jam_masuk = date("Y-m-d H:i:s");
 		$nomor_kartu = $this->input->post('nomor_kartu');
+		$suhu_tubuh = $this->input->post('suhu_tubuh');
 		
 		$object = array(
 						'nama' => $nama,
@@ -79,6 +80,7 @@ class Admin extends CI_Controller {
 						'bertemu' => $bertemu,
 						'jam_masuk' => $jam_masuk,
 						'nomor_kartu' => $nomor_kartu,
+						'suhu_tubuh' => $suhu_tubuh,
 						);
 
 		$this->db->insert('tb_buku_tamu', $object);
@@ -87,22 +89,16 @@ class Admin extends CI_Controller {
 		$uniqueFirstTb = $this->db->insert_id();
 
 		$no_buku_tamu = $this->input->post('no_buku_tamu');
-		$id_pertanyaan = $this->input->post('id_pertanyaan');
+		$id_pertanyaan = $this->db->get_where('tb_pertanyaan',array('id_pertanyaan'=>$id_pertanyaan))->row_array();
 		$jawaban = $this->input->post('jawaban');
-		$suhu_tubuh = $this->input->post('suhu_tubuh');
+		
 
 		$detail = array(
 			'no_buku_tamu' => $uniqueFirstTb,
+			'id_pertanyaan' => $id_pertanyaan['id_pertanyaan'],
 			'jawaban' => $jawaban,
-			'suhu_tubuh' => $suhu_tubuh,
 		);
-
-
-				$this->db->insert('tb_buku_tamu', $object);
-				$this->db->insert('tb_buku_tamu_detail', $detail);
-				/*$this->load->model('model_bukutamu');
-		$res = $this->model_bukutamu->insert($data);
-		echo json_encode($res);*/
+		$this->db->insert('tb_buku_tamu_detail', $detail);	
 		redirect('admin/buku_tamu','refresh');
 	}
 
