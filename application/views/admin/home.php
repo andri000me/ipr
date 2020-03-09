@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-lg-4">
             <!-- small box -->
-            <div class="small-box bg-maroon">
+            <div class="small-box bg-blue">
                 <div class="inner">
                     <strong><h1>Tamu Hari Ini</h1></strong>
                     <h3><?php echo $buku_tamu ?></h3>

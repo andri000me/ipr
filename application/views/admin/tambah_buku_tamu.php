@@ -1,13 +1,29 @@
 
 <!-- Content Wrapper. Contains page content -->
 <!-- CSS -->
-      <style>
+      <!-- <style>
       #my_camera{
        width: 320px;
        height: 240px;
        border: 1px solid black;
       }
-      </style>
+      </style> -->
+ <script src= 
+"https://code.jquery.com/jquery-1.12.4.min.js"> 
+    </script> 
+      <style type="text/css"> 
+        .selectt { 
+            color: #000; 
+            display: none; 
+            width: 100%; 
+        } 
+        p {
+          color: #000;
+        }
+        label { 
+            margin-right: 0; 
+        } 
+    </style> 
 
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -66,21 +82,25 @@
 
                     <?php  
                       $no = 1;
-                      foreach ($data as $lihat):
+                      foreach ($data as $keyPertanyaan => $lihat):
                       ?>
                     <tr>
                     <strong><p><?php echo $lihat->pertanyaan ?><br>
 
                     <div class="form-group">
 
-                    <input type="checkbox" name="jawaban" value="YA">
+                    <input type="radio" name="jawaban[<?php echo $keyPertanyaan; ?>]" value="YA">
                     <label for="vehicle2"><strong>YA</strong> </label><br>
-                    <input type="checkbox" name="jawaban" value="TIDAK">
+                    <input type="radio" name="jawaban[<?php echo $keyPertanyaan; ?>]" value="TIDAK">
                     <label for="vehicle3"> TIDAK</label><br></p></strong>
                     </div>
-                                    
-                      </tr>
-                      <?php endforeach ?>
+                               
+                    <div class="form-group">
+                     <textarea rows="3" class="YA selectt" type="text" class="form-control" name="keterangan[]" placeholder="keterangan"/></textarea>
+                    </div>
+
+                    </tr>
+                    <?php endforeach ?>
 
                     <!-- <?php  
                       $no = 1;
@@ -109,6 +129,16 @@
           </section><!-- /.content -->
         </div>
         
+        <script type="text/javascript"> 
+            $(document).ready(function() { 
+                $('input[type="radio"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    var targetBox = $("." + inputValue); 
+                    $(".selectt").not(targetBox).hide();
+                    $(targetBox).show(); 
+                }); 
+            }); 
+        </script> 
        <!--  <script type="text/javascript" src="<?php echo base_url(); ?>assets/webcamjs/webcam.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script> -->
         <!-- Code to handle taking the snapshot and displaying it locally -->

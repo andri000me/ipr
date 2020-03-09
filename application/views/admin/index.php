@@ -26,7 +26,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>images/icon-ipr.png"/>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-green sidebar-mini">
         <div class="wrapper">
             <header class="main-header">
                 <!-- Logo -->
@@ -90,7 +90,7 @@
                     <!-- <div class="user-panel">
                         <div class="pull-left image">
                             <img src="<?php echo base_url('assets/AdminLTE/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image" />
-                        </div>
+                        </div> 
                         <div class="pull-left info">
                             <p><li>
                                         <a href="#">
@@ -133,17 +133,17 @@
                         
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>Buku Tamu</span>
+                                <i class="fa fa-archive"></i> <span>Buku Tamu</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url(); ?>admin/buku_tamu"><i class="fa fa-circle-o"></i> Laporan Buku Tamu</a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/buku_tamu"><i class="fa fa-book"></i> Laporan Buku Tamu</a></li>
                             </ul>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url(); ?>admin/tamu_masuk"><i class="fa fa-circle-o"></i> Tamu Masuk</a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/tamu_masuk"><i class="fa fa-arrow-circle-right"></i> Tamu Masuk</a></li>
                             </ul>
                             <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url(); ?>admin/cari_tamu"><i class="fa fa-circle-o"></i> Tamu Keluar</a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/cari_tamu"><i class="fa fa-arrow-circle-left"></i> Tamu Keluar</a></li>
                             </ul>
                         </li>
                     </ul>

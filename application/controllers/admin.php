@@ -88,17 +88,22 @@ class Admin extends CI_Controller {
 		#UNIQUE ID TABLE PARENT 1
 		$uniqueFirstTb = $this->db->insert_id();
 		$no_buku_tamu = $this->input->post('no_buku_tamu');
+		$uniquePertanyaan = $this->db->insert_id();
 		$id_pertanyaan = $this->input->post('id_pertanyaan');
-		/*$id_pertanyaan = $this->db->get_where('tb_pertanyaan',array('id_pertanyaan'=>$id_pertanyaan))->row_array();*/
 		$jawaban = $this->input->post('jawaban');
-		
+		$keterangan = $this->input->post('keterangan');
 
-		$detail = array(
-			'no_buku_tamu' => $uniqueFirstTb,
-			'id_pertanyaan' => $id_pertanyaan,
-			'jawaban' => $jawaban,
-		);
-		$this->db->insert('tb_buku_tamu_detail', $detail);	
+		foreach ($jawaban as $keyJawaban => $valJawaban)
+		{
+			$detail = array(
+				'no_buku_tamu' => $uniqueFirstTb,
+				'id_pertanyaan' => $uniquePertanyaan,
+				'jawaban' => $valJawaban,
+				'keterangan' => $keterangan[$keyJawaban] == null ? '-' : $keterangan[$keyJawaban],
+			);
+			$this->db->insert('tb_buku_tamu_detail', $detail);	
+		}
+		
 		redirect('admin/buku_tamu','refresh');
 	}
 
