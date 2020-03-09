@@ -23,7 +23,7 @@
             <div class="box box-info">
               <div class="box-body">
                 <!-- form start -->
-                <?php echo form_open("admin/insert_buku_tamu", array('enctype'=>'multipart/form-data')); ?>
+                <?php echo form_open("admin/tamu_keluar", array('enctype'=>'multipart/form-data')); ?>
                       <br>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nomor Kartu Tamu</label>

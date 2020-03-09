@@ -21,50 +21,31 @@
                 <?php  
                 foreach ($editdata as $data):
                 ?>
-                  <div class="form-group">
-                    <!-- <label for="exampleInputEmail1">Jenis Surat</label>
-                      <select name="jenis" class="form-control">
-                        <?php
-                        $l_jenis = $this->db->query("SELECT * FROM tb_buku_tamu")->result();
-                        
-                        if (empty($l_jenis)) {
-                          echo "<option  value=''> --Tidak Ada Data-- </option>";
-                        } else {
-                        foreach($l_jenis as $l_jenis_surat){
-                        ?>
-                       <option <?php if( $data->jenis_id == $l_jenis_surat->jenis_id) {echo "selected"; } ?> value='<?php echo $l_jenis_surat->jenis_id ;?>'><?php echo $l_jenis_surat->jenis_surat ;?></option>
-
-                        <?php 
-                          } 
-                          }
-                        ?>
-                        
-                      </select> -->
-                  <!-- </div>-->        
+                  
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
-                      <input type="text" class="form-control" name="nama" value="<?php echo $data->nama ?>" />
+                      <input type="text" class="form-control" name="nama" value="<?php echo $data->nama ?>" readonly/>
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Asal Perusahaan</label>
-                      <input type="text" class="form-control" name="asal_perusahaan" value="<?php echo $data->asal_perusahaan ?>" />
+                      <input type="text" class="form-control" name="asal_perusahaan" value="<?php echo $data->asal_perusahaan ?>" readonly/>
                   </div>
                   
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tujuan</label>
-                      <input type="text" class="form-control" name="tujuan" value="<?php echo $data->tujuan ?>"/>
+                      <input type="text" class="form-control" name="tujuan" value="<?php echo $data->tujuan ?>"readonly/>
                   </div>
                   
                   <div class="form-group">
                     <label for="exampleInputEmail1">Bertemu</label>
-                      <input type="text" class="form-control" name="bertemu" value="<?php echo $data->bertemu ?>" />
+                      <input type="text" class="form-control" name="bertemu" value="<?php echo $data->bertemu ?>" readonly/>
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nomor Kartu</label>
-                      <input type="text" class="form-control" name="nomor_kartu" value="<?php echo $data->nomor_kartu ?>" />
+                      <input type="text" class="form-control" name="nomor_kartu" value="<?php echo $data->nomor_kartu ?>" readonly/>
                   </div>
                   
 <!-- 

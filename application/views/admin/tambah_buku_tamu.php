@@ -12,7 +12,7 @@
 "https://code.jquery.com/jquery-1.12.4.min.js"> 
     </script> 
       <style type="text/css"> 
-        .selectt { 
+        .select { 
             color: #000; 
             display: none; 
             width: 100%; 
@@ -94,31 +94,13 @@
                     <input type="radio" name="jawaban[<?php echo $keyPertanyaan; ?>]" value="TIDAK">
                     <label for="vehicle3"> TIDAK</label><br></p></strong>
                     </div>
-                               
+                              
                     <div class="form-group">
-                     <textarea rows="3" class="YA selectt" type="text" class="form-control" name="keterangan[]" placeholder="keterangan"/></textarea>
+                     <textarea rows="3" class="YA select" type="text" class="form-control" name="keterangan" placeholder="keterangan..."/></textarea>
                     </div>
 
                     </tr>
                     <?php endforeach ?>
-
-                    <!-- <?php  
-                      $no = 1;
-                      foreach ($data as $lihat):
-                      ?>
-                    <tr>
-                    <strong><p><?php echo $lihat->pertanyaan ?><br>
-                    <div class="form-group">
-                      <label for="vehicle3">
-                        <input type="radio" name="jawaban" class="minimal" checked>YA
-                      </label><br>
-                      <label for="vehicle1">
-                        <input type="radio" name="jawaban" class="minimal">TIDAK
-                      </label>
-                    </div>
-
-                    </tr>
-                      <?php endforeach ?> -->
 
                   <a href="<?php echo base_url(); ?>admin/tamu_masuk" class="btn btn-danger btn-flat"><i class="fa fa-arrow-left"></i> Batal</a>
                   <button type="submit" name="simpan" class="btn btn-success btn-flat"><i class="fa fa-save"></i> Simpan</button>
@@ -129,12 +111,18 @@
           </section><!-- /.content -->
         </div>
         
+        <div class="circle" id="circle"></div> 
+  
+    <div class="rounded" id="rounded"></div> 
+  
+    <div class="square" id="square"></div> 
+
         <script type="text/javascript"> 
             $(document).ready(function() { 
                 $('input[type="radio"]').click(function() { 
                     var inputValue = $(this).attr("value"); 
                     var targetBox = $("." + inputValue); 
-                    $(".selectt").not(targetBox).hide();
+                    $(".select").not(targetBox).hide();
                     $(targetBox).show(); 
                 }); 
             }); 

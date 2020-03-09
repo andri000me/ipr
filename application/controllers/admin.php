@@ -99,7 +99,8 @@ class Admin extends CI_Controller {
 				'no_buku_tamu' => $uniqueFirstTb,
 				'id_pertanyaan' => $uniquePertanyaan,
 				'jawaban' => $valJawaban,
-				'keterangan' => $keterangan[$keyJawaban] == null ? '-' : $keterangan[$keyJawaban],
+				'keterangan' => $keterangan,
+				/*'keterangan' => $keterangan[$keyJawaban] == null ? '-' : $keterangan[$keyJawaban],*/
 			);
 			$this->db->insert('tb_buku_tamu_detail', $detail);	
 		}
